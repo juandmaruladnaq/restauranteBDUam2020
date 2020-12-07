@@ -3,11 +3,16 @@ import { PanelEmpleadosComponent } from './components/empleados/panel-empleados/
 import { PanelUsuariosComponent } from './components/usuarios/panel-usuarios/panel-usuarios.component'
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PanelClientesComponent } from './components/clientes/panel-clientes/panel-clientes.component';
+import { PanelProductosComponent } from './components/productos/panel-productos/panel-productos.component';
 
 const routes: Routes = [
-  {path:'', component: NewOrderComponent},
+  {path:'ordenar', component: NewOrderComponent},
   {path:'empleados', component: PanelEmpleadosComponent},
-  {path:'usuarios', component: PanelUsuariosComponent}
+  {path:'usuarios', component: PanelUsuariosComponent},
+  {path:'clientes', component: PanelClientesComponent },
+  {path:'productos', component:PanelProductosComponent},
+  { path: '**', pathMatch:'full', redirectTo: 'ordenar' }
 ];
 
 @NgModule({
